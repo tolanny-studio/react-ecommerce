@@ -3,8 +3,11 @@ import "./HomePage.css";
 import Header from "../components/Header";
 
 import { products } from "../data/products";
+import axios from "axios";
 
 const HomePage = () => {
+
+  const productsURL = 'http://localhost:3000/api/products'
   // fetch('http://localhost:3000/api/products').then((response)=>{
   //   response.json().then((data)=>{
   //     console.log(data.length);
@@ -12,25 +15,30 @@ const HomePage = () => {
   //   })
   // })
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/api/products");
-      if(response.ok){
-        const data = await response.json()
-        console.log(data);
-      }else{
-        console.error("Wrong URL provided")
-      }
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:3000/api/products");
+  //     if(response.ok){
+  //       const data = await response.json()
+  //       console.log(data);
+  //     }else{
+  //       console.error("Wrong URL provided")
+  //     }
       
-    } catch (error) {
-      console.error(error);
+  //   } catch (error) {
+  //     console.error(error);
       
-    }
-  };
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchData();
-  },[]);
+  // useEffect(() => {
+  //   fetchData();
+  // },[]);
+
+  axios.get(productsURL).then((response)=>{
+    console.log(response.data);
+    
+  })
 
   return (
     <>
