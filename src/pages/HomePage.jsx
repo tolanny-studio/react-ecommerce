@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import Header from "../components/Header";
 
-import { products } from "../data/products";
+// Gets data from the frontend data
+// import { products } from "../data/products";
 import axios from "axios";
 
 const HomePage = () => {
+  const productsURL = "http://localhost:3000/api/products";
 
-  const productsURL = 'http://localhost:3000/api/products'
+  const [products,setProducts] = useState([])
   // fetch('http://localhost:3000/api/products').then((response)=>{
   //   response.json().then((data)=>{
   //     console.log(data.length);
@@ -24,10 +26,10 @@ const HomePage = () => {
   //     }else{
   //       console.error("Wrong URL provided")
   //     }
-      
+
   //   } catch (error) {
   //     console.error(error);
-      
+
   //   }
   // };
 
@@ -35,10 +37,11 @@ const HomePage = () => {
   //   fetchData();
   // },[]);
 
-  axios.get(productsURL).then((response)=>{
-    console.log(response.data);
-    
-  })
+  useEffect(() => {
+    axios.get(productsURL).then((response) => {
+      setProducts(response.data)
+    });
+  }, []);
 
   return (
     <>
