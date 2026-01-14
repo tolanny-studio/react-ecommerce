@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './OrdersPage.css'
 import Header from '../components/Header'
 
 const OrdersPage = () => {
+  useEffect(() => {
+        const link = document.querySelector("link[rel='icon']");
+        if (link) {
+          link.href = "/images/favicon/orders-favicon.png";
+        }
+      }, []);
   return (
     <>
       <title>Orders</title>

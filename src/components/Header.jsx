@@ -1,8 +1,15 @@
-import React from 'react'
+import { useEffect } from "react";
 import {NavLink} from 'react-router'
 import './Header.css'
 
+
 const Header = () => {
+    useEffect(() => {
+    const link = document.querySelector("link[rel='icon']");
+    if (link) {
+      link.href = "/images/favicon/home-favicon.png";
+    }
+  }, []);
   return (
     <div className="header">
         <div className="left-section">

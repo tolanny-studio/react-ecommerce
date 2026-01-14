@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Link } from 'react-router'
 import './CheckoutHeader.css'
 
 const CheckoutHeader = () => {
+  useEffect(() => {
+      const link = document.querySelector("link[rel='icon']");
+      if (link) {
+        link.href = "/images/favicon/cart-favicon.png";
+      }
+    }, []);
   return (
     <div className="checkout-header">
       <div className="header-content">

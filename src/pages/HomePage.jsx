@@ -2,9 +2,9 @@ import React from 'react'
 import './HomePage.css'
 import Header from '../components/Header'
 
+
 const HomePage = () => {
   return (
-
     <>
     <title>Ecommerce Website</title>
     <Header />
