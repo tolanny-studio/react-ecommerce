@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomePage.css";
 import Header from "../components/Header";
 
 import { products } from "../data/products";
 
 const HomePage = () => {
-  fetch('http://localhost:3000/api/products').then((response)=>{
-    response.json().then((data)=>{
-      console.log(data.length);
+  // fetch('http://localhost:3000/api/products').then((response)=>{
+  //   response.json().then((data)=>{
+  //     console.log(data.length);
+
+  //   })
+  // })
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/products");
+      if(response.ok){
+        const data = await response.json()
+        console.log(data);
+      }else{
+        console.error("Wrong URL provided")
+      }
       
-    })
-  })
+    } catch (error) {
+      console.error(error);
+      
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  },[]);
 
   return (
     <>
@@ -20,14 +40,17 @@ const HomePage = () => {
       <div className="home-page">
         <div className="products-grid">
           {products.map((product) => {
-            const{id,image:productImage,name:productName,rating:{stars:productStars,productCount},priceCents:productPrice} = product
+            const {
+              id,
+              image: productImage,
+              name: productName,
+              rating: { stars: productStars, productCount },
+              priceCents: productPrice,
+            } = product;
             return (
               <div key={id} className="product-container">
                 <div className="product-image-container">
-                  <img
-                    className="product-image"
-                    src={productImage}
-                  />
+                  <img className="product-image" src={productImage} />
                 </div>
 
                 <div className="product-name limit-text-to-2-lines">
@@ -39,10 +62,14 @@ const HomePage = () => {
                     className="product-rating-stars"
                     src={`images/ratings/rating-${productStars * 10}.png`}
                   />
-                  <div className="product-rating-count link-primary">{productCount}</div>
+                  <div className="product-rating-count link-primary">
+                    {productCount}
+                  </div>
                 </div>
 
-                <div className="product-price">${(productPrice/100).toFixed(2)}</div>
+                <div className="product-price">
+                  ${(productPrice / 100).toFixed(2)}
+                </div>
                 <div className="product-quantity-container">
                   <select>
                     <option value="1">1</option>
