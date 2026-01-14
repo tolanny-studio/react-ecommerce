@@ -1,9 +1,16 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './TrackingPage.css'
 import Header from '../components/Header'
 
 
 const TrackingPage = () => {
+
+    useEffect(() => {
+          const link = document.querySelector("link[rel='icon']");
+          if (link) {
+            link.href = "/images/favicon/tracking-favicon.png";
+          }
+        }, []);
   return (
     <>
       <title>Tracking</title>
@@ -27,7 +34,7 @@ const TrackingPage = () => {
             Quantity: 1
           </div>
 
-          <img class="product-image" src="images/products/athletic-cotton-socks-6-pairs.jpg" />
+          <img class="product-image" src={"images/products/athletic-cotton-socks-6-pairs.jpg" }/>
 
           <div class="progress-labels-container">
             <div class="progress-label">

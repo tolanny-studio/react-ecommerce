@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import './OrdersPage.css'
 import Header from '../components/Header'
+import BuyAgain from '../assets/images/icons/buy-again.png'
 
 const OrdersPage = () => {
   useEffect(() => {
@@ -41,7 +42,7 @@ const OrdersPage = () => {
 
             <div className="order-details-grid">
               <div className="product-image-container">
-                <img src="images/products/athletic-cotton-socks-6-pairs.jpg" />
+                <img src={"images/products/athletic-cotton-socks-6-pairs.jpg"} />
               </div>
 
               <div className="product-details">
@@ -55,7 +56,7 @@ const OrdersPage = () => {
                   Quantity: 1
                 </div>
                 <button className="buy-again-button button-primary">
-                  <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                  <img className="buy-again-icon" src={BuyAgain} />
                   <span className="buy-again-message">Add to Cart</span>
                 </button>
               </div>
@@ -69,7 +70,7 @@ const OrdersPage = () => {
               </div>
 
               <div className="product-image-container">
-                <img src="images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg" />
+                <img src={"images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg" }/>
               </div>
 
               <div className="product-details">
@@ -83,7 +84,7 @@ const OrdersPage = () => {
                   Quantity: 2
                 </div>
                 <button className="buy-again-button button-primary">
-                  <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                  <img className="buy-again-icon" src={BuyAgain} />
                   <span className="buy-again-message">Add to Cart</span>
                 </button>
               </div>
@@ -120,7 +121,7 @@ const OrdersPage = () => {
 
             <div className="order-details-grid">
               <div className="product-image-container">
-                <img src="images/products/intermediate-composite-basketball.jpg" />
+                <img src={"images/products/intermediate-composite-basketball.jpg"} />
               </div>
 
               <div className="product-details">
@@ -134,7 +135,7 @@ const OrdersPage = () => {
                   Quantity: 2
                 </div>
                 <button className="buy-again-button button-primary">
-                  <img className="buy-again-icon" src="images/icons/buy-again.png" />
+                  <img className="buy-again-icon" src={BuyAgain}/>
                   <span className="buy-again-message">Add to Cart</span>
                 </button>
               </div>
