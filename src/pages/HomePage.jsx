@@ -7,8 +7,8 @@ import Header from "../components/Header";
 import axios from "axios";
 
 const HomePage = () => {
-  const productsURL = "http://localhost:3000/api/products";
-  const cartURL = "http://localhost:3000/api/cart-items"
+  const productsURL = "/api/products";
+  const cartURL = "/api/cart-items"
 
   const [products,setProducts] = useState([])
   const [cart,setCart] = useState([])
@@ -44,6 +44,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios.get(productsURL).then((response) => {
+      console.log(response);
       setProducts(response.data)
     });
   }, []);

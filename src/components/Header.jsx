@@ -11,7 +11,6 @@ import CartIcon from '../assets/images/icons/cart-icon.png'
 const Header = ({cart}) => {
 
   let totalQuantity = 0
-  
   cart.forEach((cartItem) => {
     const{quantity} = cartItem
     totalQuantity += quantity

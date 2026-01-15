@@ -14,7 +14,7 @@ const OrdersPage = () => {
     <>
       <title>Orders</title>
       
-      <Header />
+      <Header/>
 
       <div className="orders-page">
         <div className="page-title">Your Orders</div>
@@ -70,7 +70,7 @@ const OrdersPage = () => {
               </div>
 
               <div className="product-image-container">
-                <img src={"images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg" }/>
+                <img src={"images/products/adults-plain-cotton- -2-pack-teal.jpg" }/>
               </div>
 
               <div className="product-details">
