@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import Header from "../components/Header";
+import { formatMoney } from "../utils/money";
 
 // Gets data from the frontend data
 // import { products } from "../data/products";
@@ -85,7 +86,7 @@ const HomePage = ({cart}) => {
                 </div>
 
                 <div className="product-price">
-                  ${(productPrice / 100).toFixed(2)}
+                  {formatMoney(productPrice)}
                 </div>
                 <div className="product-quantity-container">
                   <select>

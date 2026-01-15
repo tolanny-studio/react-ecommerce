@@ -12,7 +12,7 @@ import Page404 from './pages/Page404'
 
 function App() {
 
-  const cartURL = "/api/cart-items"
+  const cartURL = "/api/cart-items?expand=product"
 
   const [cart,setCart] = useState([])
 
