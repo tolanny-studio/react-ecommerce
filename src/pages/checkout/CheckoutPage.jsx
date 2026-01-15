@@ -3,7 +3,7 @@ import './CheckoutPage.css'
 import CheckoutHeader from './CheckoutHeader'
 
 
-const CheckoutPage = () => {
+const CheckoutPage = ({cart}) => {
   return (
     <>
     <title>Checkout</title>

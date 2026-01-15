@@ -6,14 +6,12 @@ import Header from "../components/Header";
 // import { products } from "../data/products";
 import axios from "axios";
 
-const HomePage = () => {
+const HomePage = ({cart}) => {
   const productsURL = "/api/products";
-  const cartURL = "/api/cart-items"
+  
 
   const [products,setProducts] = useState([])
-  const [cart,setCart] = useState([])
-
-
+  
   // fetch('http://localhost:3000/api/products').then((response)=>{
   //   response.json().then((data)=>{
   //     console.log(data.length);
@@ -49,11 +47,7 @@ const HomePage = () => {
     });
   }, []);
 
-  useEffect(()=>{
-    axios.get(cartURL).then((response)=>{
-      setCart(response.data);
-    })
-  },[])
+  
 
   return (
     <>
